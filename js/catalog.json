@@ -6,108 +6,108 @@
   "syncedAt": "2026-07-19 11:07 UTC",
   "categories": [
     {
-      "id": "польза",
+      "id": "polza",
       "title": "Польза",
       "label": "Board",
       "blurb": "Synced from Pinterest · 10 items",
       "accent": "#c8ff00",
       "items": [
         {
-          "id": "польза-1",
+          "id": "polza-1",
           "title": "Польза · 01",
           "blurb": "From Pinterest",
           "link": "https://www.pinterest.com/whtsib/",
-          "video": "media/boards/польза/clip-01.mp4",
+          "video": "media/boards/polza/clip-01.mp4",
           "poster": ""
         },
         {
-          "id": "польза-2",
+          "id": "polza-2",
           "title": "Польза · 02",
           "blurb": "From Pinterest",
           "link": "https://www.pinterest.com/whtsib/",
-          "video": "media/boards/польза/clip-02.mp4",
+          "video": "media/boards/polza/clip-02.mp4",
           "poster": ""
         },
         {
-          "id": "польза-3",
+          "id": "polza-3",
           "title": "Польза · 03",
           "blurb": "From Pinterest",
           "link": "https://www.pinterest.com/whtsib/",
-          "video": "media/boards/польза/clip-03.mp4",
+          "video": "media/boards/polza/clip-03.mp4",
           "poster": ""
         },
         {
-          "id": "польза-4",
+          "id": "polza-4",
           "title": "Польза · 04",
           "blurb": "From Pinterest",
           "link": "https://www.pinterest.com/whtsib/",
-          "video": "media/boards/польза/clip-04.mp4",
+          "video": "media/boards/polza/clip-04.mp4",
           "poster": ""
         },
         {
-          "id": "польза-5",
+          "id": "polza-5",
           "title": "Польза · 05",
           "blurb": "From Pinterest",
           "link": "https://www.pinterest.com/whtsib/",
-          "video": "media/boards/польза/clip-05.mp4",
+          "video": "media/boards/polza/clip-05.mp4",
           "poster": ""
         },
         {
-          "id": "польза-6",
+          "id": "polza-6",
           "title": "Польза · 06",
           "blurb": "From Pinterest",
           "link": "https://www.pinterest.com/whtsib/",
-          "video": "media/boards/польза/clip-06.mp4",
+          "video": "media/boards/polza/clip-06.mp4",
           "poster": ""
         },
         {
-          "id": "польза-7",
+          "id": "polza-7",
           "title": "Польза · 07",
           "blurb": "From Pinterest",
           "link": "https://www.pinterest.com/whtsib/",
-          "video": "media/boards/польза/clip-07.mp4",
+          "video": "media/boards/polza/clip-07.mp4",
           "poster": ""
         },
         {
-          "id": "польза-8",
+          "id": "polza-8",
           "title": "Польза · 08",
           "blurb": "From Pinterest",
           "link": "https://www.pinterest.com/whtsib/",
-          "video": "media/boards/польза/clip-08.mp4",
+          "video": "media/boards/polza/clip-08.mp4",
           "poster": ""
         },
         {
-          "id": "польза-9",
+          "id": "polza-9",
           "title": "Польза · 09",
           "blurb": "From Pinterest",
           "link": "https://www.pinterest.com/whtsib/",
-          "video": "media/boards/польза/clip-09.mp4",
+          "video": "media/boards/polza/clip-09.mp4",
           "poster": ""
         },
         {
-          "id": "польза-i1",
+          "id": "polza-i1",
           "title": "Польза · 01",
           "blurb": "From Pinterest",
           "link": "https://www.pinterest.com/whtsib/",
           "video": "",
-          "poster": "media/boards/польза/still-01.jpg",
-          "image": "media/boards/польза/still-01.jpg"
+          "poster": "media/boards/polza/still-01.jpg",
+          "image": "media/boards/polza/still-01.jpg"
         }
       ]
     },
     {
-      "id": "юморист",
+      "id": "yumorist",
       "title": "Юморист",
       "label": "Board",
       "blurb": "Synced from Pinterest · 1 items",
       "accent": "#c8ff00",
       "items": [
         {
-          "id": "юморист-1",
+          "id": "yumorist-1",
           "title": "Юморист · 01",
           "blurb": "From Pinterest",
           "link": "https://www.pinterest.com/whtsib/",
-          "video": "media/boards/юморист/clip-01.mp4",
+          "video": "media/boards/yumorist/clip-01.mp4",
           "poster": ""
         }
       ]
