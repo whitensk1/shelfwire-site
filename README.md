@@ -1,4 +1,4 @@
-# Shelfwire — public site (GitHub Pages)
+# Mediadrop — public site (GitHub Pages)
 
 Multimedia product video catalog + privacy page.
 
@@ -33,38 +33,38 @@ English mini-site also covers:
 
 ## URLs after publish
 
-If the repo is `YOUR_USER/shelfwire-site` and GitHub Pages is on:
+If the repo is `YOUR_USER/mediadrop-site` and GitHub Pages is on:
 
 | Field in Pinterest | URL |
 |--------------------|-----|
-| Website | `https://YOUR_USER.github.io/shelfwire-site/` |
-| Privacy policy | `https://YOUR_USER.github.io/shelfwire-site/privacy.html` |
+| Website | `https://YOUR_USER.github.io/mediadrop-site/` |
+| Privacy policy | `https://YOUR_USER.github.io/mediadrop-site/privacy.html` |
 
 ## Before you publish
 
 1. Replace **email** in `index.html` and `privacy.html`  
-   (search for `hello.shelfwire@gmail.com`).
-2. Optional: rename “Shelfwire” if you want another brand.
+   (search for `hello.mediadrop@gmail.com`).
+2. Optional: rename “Mediadrop” if you want another brand.
 
 ## Deploy (5 minutes)
 
 ### A. New empty GitHub repo
 
-1. GitHub → **New repository** → name e.g. `shelfwire-site` → Public → Create.
+1. GitHub → **New repository** → name e.g. `mediadrop-site` → Public → Create.
 2. On your Mac:
 
 ```bash
 cd "/Volumes/SSD 250/Grok social-poster/public-site"
 git init
 git add .
-git commit -m "Initial Shelfwire public site + privacy policy"
+git commit -m "Initial Mediadrop public site + privacy policy"
 git branch -M main
-git remote add origin https://github.com/YOUR_USER/shelfwire-site.git
+git remote add origin https://github.com/YOUR_USER/mediadrop-site.git
 git push -u origin main
 ```
 
 3. Repo → **Settings** → **Pages** → Source: **Deploy from a branch** → Branch: `main` / `/ (root)` → Save.
-4. Wait 1–2 minutes → open `https://YOUR_USER.github.io/shelfwire-site/`
+4. Wait 1–2 minutes → open `https://YOUR_USER.github.io/mediadrop-site/`
 
 ### B. Local preview
 

@@ -3,9 +3,9 @@
  * video: relative path or https URL
  */
 window.SHELFWIRE_CATALOG = {
-  siteName: "Shelfwire",
-  tagline: "Just the product.\nIn motion.",
-  sub: "Short films. Clean cuts. Direct links.",
+  siteName: "Mediadrop",
+  tagline: "All my media.\nOne place.",
+  sub: "Generated work lives here — and on Pinterest.",
   categories: [
     {
       id: "polza",

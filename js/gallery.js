@@ -175,7 +175,7 @@
   const brand = $("brand-name");
   const h1 = $("hero-title");
   const sub = $("hero-sub");
-  if (brand) brand.textContent = data.siteName || "Shelfwire";
+  if (brand) brand.textContent = data.siteName || "Mediadrop";
   if (h1) h1.textContent = data.tagline || "";
   if (sub) sub.textContent = data.sub || "";
 
