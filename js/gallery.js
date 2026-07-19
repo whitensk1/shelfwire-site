@@ -2,181 +2,196 @@
   "use strict";
 
   const data = window.SHELFWIRE_CATALOG;
-  if (!data) {
-    console.error("catalog.js not loaded");
-    return;
-  }
+  if (!data) return;
 
-  const rail = document.getElementById("rail");
-  const stage = document.getElementById("stage");
-  const stageHead = document.getElementById("stage-head");
-  const fan = document.getElementById("fan");
-  const modal = document.getElementById("modal");
-  const modalVideo = document.getElementById("modal-video");
-  const modalTitle = document.getElementById("modal-title");
-  const modalBlurb = document.getElementById("modal-blurb");
-  const modalCat = document.getElementById("modal-cat");
-  const modalLink = document.getElementById("modal-link");
-  const modalClose = document.getElementById("modal-close");
+  const $ = (id) => document.getElementById(id);
+  const tabs = $("tabs");
+  const stage = $("stage");
+  const stageHead = $("stage-head");
+  const grid = $("grid");
+  const overlay = $("overlay");
+  const sheetVideo = $("sheet-video");
+  const sheetCat = $("sheet-cat");
+  const sheetTitle = $("sheet-title");
+  const sheetBlurb = $("sheet-blurb");
+  const sheetLink = $("sheet-link");
+  const heroVideo = $("hero-video");
 
   let activeId = null;
-  let collapseTimer = null;
+  let leaveTimer = null;
 
-  function esc(s) {
-    return String(s ?? "")
+  const esc = (s) =>
+    String(s ?? "")
       .replace(/&/g, "&amp;")
       .replace(/</g, "&lt;")
       .replace(/>/g, "&gt;")
       .replace(/"/g, "&quot;");
+
+  function firstVideo() {
+    for (const c of data.categories || []) {
+      for (const it of c.items || []) {
+        if (it.video) return it.video;
+      }
+    }
+    return "";
   }
 
-  function renderRail() {
-    rail.innerHTML = data.categories
-      .map(
-        (c) => `
-      <button type="button" class="folder" data-id="${esc(c.id)}"
-        style="--folder-accent:${esc(c.accent || "#3ecf8e")}">
-        <span class="fe">${esc(c.emoji || "📁")}</span>
-        <div class="ft">${esc(c.title)}</div>
-        <div class="fb">${esc(c.blurb || "")}</div>
-        <div class="fc">${(c.items || []).length} clips</div>
-      </button>`
-      )
+  function renderTabs() {
+    tabs.innerHTML = (data.categories || [])
+      .map((c) => {
+        const n = (c.items || []).length;
+        return `
+        <button type="button" class="tab" data-id="${esc(c.id)}" role="tab">
+          <div class="t-label">${esc(c.label || "Collection")}</div>
+          <div class="t-title">${esc(c.title)}</div>
+          <div class="t-count">${n ? n + " films" : "Soon"}</div>
+        </button>`;
+      })
       .join("");
 
-    rail.querySelectorAll(".folder").forEach((btn) => {
-      btn.addEventListener("mouseenter", () => openCategory(btn.dataset.id, false));
-      btn.addEventListener("click", () => openCategory(btn.dataset.id, true));
-      btn.addEventListener("focus", () => openCategory(btn.dataset.id, false));
+    tabs.querySelectorAll(".tab").forEach((btn) => {
+      btn.addEventListener("mouseenter", () => select(btn.dataset.id));
+      btn.addEventListener("focus", () => select(btn.dataset.id));
+      btn.addEventListener("click", () => select(btn.dataset.id, true));
     });
   }
 
-  function openCategory(id, force) {
-    if (!id) return;
-    if (id === activeId && !force) return;
-
+  function select(id, scroll) {
+    if (!id || id === activeId) {
+      if (scroll) $("gallery")?.scrollIntoView({ behavior: "smooth", block: "start" });
+      return;
+    }
     const cat = data.categories.find((c) => c.id === id);
     if (!cat) return;
 
-    // collapse current
-    if (activeId && activeId !== id) {
-      stage.classList.add("collapsing");
-      stage.classList.remove("open");
-      clearTimeout(collapseTimer);
-      collapseTimer = setTimeout(() => {
-        stage.classList.remove("collapsing");
-        fillFan(cat);
-        stage.classList.add("open");
-      }, 280);
+    const go = () => {
+      stage.classList.remove("is-leave");
+      fill(cat);
+      requestAnimationFrame(() => stage.classList.add("is-open"));
+    };
+
+    if (activeId) {
+      stage.classList.remove("is-open");
+      stage.classList.add("is-leave");
+      clearTimeout(leaveTimer);
+      leaveTimer = setTimeout(go, 220);
     } else {
-      fillFan(cat);
-      requestAnimationFrame(() => stage.classList.add("open"));
+      go();
     }
 
     activeId = id;
-    rail.querySelectorAll(".folder").forEach((b) => {
-      b.classList.toggle("active", b.dataset.id === id);
+    tabs.querySelectorAll(".tab").forEach((t) => {
+      t.classList.toggle("active", t.dataset.id === id);
     });
+    if (scroll) $("gallery")?.scrollIntoView({ behavior: "smooth", block: "start" });
   }
 
-  function fillFan(cat) {
-    stage.style.setProperty("--cat-accent", cat.accent || "#3ecf8e");
+  function fill(cat) {
     stageHead.innerHTML = `
-      <div>
-        <h2>${esc(cat.emoji || "")} ${esc(cat.title)}</h2>
-        <p>${esc(cat.blurb || "")}</p>
-      </div>`;
+      <h2>${esc(cat.title)}</h2>
+      <p>${esc(cat.blurb || "")}</p>`;
 
     const items = cat.items || [];
     if (!items.length) {
-      fan.innerHTML = `<div class="stage-empty">No product clips in this collection yet.<br><span style="font-size:0.85em;opacity:0.8">Add videos in <code>js/catalog.js</code> and files under <code>media/</code>.</span></div>`;
+      grid.innerHTML = `<div class="empty">Nothing here yet — drop product films into this collection.</div>`;
       return;
     }
 
-    fan.innerHTML = items
+    grid.innerHTML = items
       .map(
         (item, i) => `
-      <article class="clip" data-item="${esc(item.id)}" data-cat="${esc(cat.id)}" style="--i:${i}">
+      <article class="card" style="--i:${i}" data-id="${esc(item.id)}" data-cat="${esc(cat.id)}">
         ${
           item.video
             ? `<video src="${esc(item.video)}" ${item.poster ? `poster="${esc(item.poster)}"` : ""} muted loop playsinline preload="metadata"></video>`
-            : `<div class="poster"></div>`
+            : `<div class="ph"></div>`
         }
-        <div class="shade"></div>
-        <div class="play" aria-hidden="true">
+        <div class="grad"></div>
+        <div class="dot" aria-hidden="true">
           <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
         </div>
-        <div class="meta">
+        <div class="info">
           <h3>${esc(item.title)}</h3>
-          <p>${esc(item.blurb || "")}</p>
+          <span>${esc(item.blurb || "Product film")}</span>
         </div>
       </article>`
       )
       .join("");
 
-    fan.querySelectorAll(".clip").forEach((el) => {
-      const video = el.querySelector("video");
-      el.addEventListener("mouseenter", () => {
-        if (video) {
-          video.play().catch(() => {});
-        }
+    grid.querySelectorAll(".card").forEach((card) => {
+      const v = card.querySelector("video");
+      card.addEventListener("mouseenter", () => v && v.play().catch(() => {}));
+      card.addEventListener("mouseleave", () => {
+        if (!v) return;
+        v.pause();
+        v.currentTime = 0;
       });
-      el.addEventListener("mouseleave", () => {
-        if (video) {
-          video.pause();
-          video.currentTime = 0;
-        }
-      });
-      el.addEventListener("click", () => {
-        const item = items.find((x) => x.id === el.dataset.item);
-        if (item) openModal(cat, item);
+      card.addEventListener("click", () => {
+        const item = items.find((x) => x.id === card.dataset.id);
+        if (item) openSheet(cat, item);
       });
     });
   }
 
-  function openModal(cat, item) {
-    modalCat.textContent = cat.title;
-    modalTitle.textContent = item.title;
-    modalBlurb.textContent = item.blurb || "";
+  function openSheet(cat, item) {
+    sheetCat.textContent = cat.title;
+    sheetTitle.textContent = item.title;
+    sheetBlurb.textContent = item.blurb || "";
     if (item.link) {
-      modalLink.href = item.link;
-      modalLink.style.display = "";
+      sheetLink.href = item.link;
+      sheetLink.hidden = false;
     } else {
-      modalLink.style.display = "none";
+      sheetLink.hidden = true;
     }
-    modalVideo.pause();
-    modalVideo.removeAttribute("src");
-    if (item.poster) modalVideo.poster = item.poster;
+    sheetVideo.pause();
+    sheetVideo.removeAttribute("src");
+    if (item.poster) sheetVideo.poster = item.poster;
     if (item.video) {
-      modalVideo.src = item.video;
-      modalVideo.load();
-      modalVideo.play().catch(() => {});
+      sheetVideo.src = item.video;
+      sheetVideo.load();
+      sheetVideo.play().catch(() => {});
     }
-    modal.classList.add("open");
+    overlay.classList.add("open");
     document.body.style.overflow = "hidden";
   }
 
-  function closeModal() {
-    modal.classList.remove("open");
-    modalVideo.pause();
-    modalVideo.removeAttribute("src");
+  function closeSheet() {
+    overlay.classList.remove("open");
+    sheetVideo.pause();
+    sheetVideo.removeAttribute("src");
     document.body.style.overflow = "";
   }
 
-  modalClose.addEventListener("click", closeModal);
-  modal.addEventListener("click", (e) => {
-    if (e.target === modal) closeModal();
+  $("sheet-close")?.addEventListener("click", closeSheet);
+  $("sheet-close-2")?.addEventListener("click", closeSheet);
+  overlay?.addEventListener("click", (e) => {
+    if (e.target === overlay) closeSheet();
   });
   document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") closeModal();
+    if (e.key === "Escape") closeSheet();
   });
 
-  // init
-  const nameEl = document.getElementById("site-name");
-  const tagEl = document.getElementById("site-tagline");
-  if (nameEl) nameEl.textContent = data.siteName || "Shelfwire";
-  if (tagEl) tagEl.textContent = data.tagline || "";
+  // brand text
+  const brand = $("brand-name");
+  const h1 = $("hero-title");
+  const sub = $("hero-sub");
+  if (brand) brand.textContent = data.siteName || "Shelfwire";
+  if (h1) h1.textContent = data.tagline || "";
+  if (sub) sub.textContent = data.sub || "";
 
-  renderRail();
-  if (data.categories[0]) openCategory(data.categories[0].id, true);
+  // hero video
+  const hv = firstVideo();
+  if (heroVideo && hv) {
+    heroVideo.src = hv;
+    heroVideo.muted = true;
+    heroVideo.loop = true;
+    heroVideo.playsInline = true;
+    heroVideo.play().catch(() => {});
+  }
+
+  renderTabs();
+  const firstWithItems =
+    (data.categories || []).find((c) => (c.items || []).length) ||
+    data.categories?.[0];
+  if (firstWithItems) select(firstWithItems.id);
 })();

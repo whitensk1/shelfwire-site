@@ -4,80 +4,85 @@
   <meta charset="UTF-8" />
   <meta name="p:domain_verify" content="ba3eca7c7f9a211c7e49f928717fe940"/>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Shelfwire — Product videos</title>
+  <title>Shelfwire</title>
+  <meta name="description" content="Shelfwire — product films. Just the product, in motion." />
   <meta name="author" content="Shelfwire" />
   <meta property="og:site_name" content="Shelfwire" />
-  <meta name="description" content="Shelfwire — multimedia product catalog. Short reels by collection, minimal copy, direct product links." />
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/gallery.css" />
 </head>
 <body>
-  <header class="top">
-    <a class="logo" href="index.html"><span id="site-name">Shelfwire</span></a>
-    <nav class="nav">
-      <a href="#gallery">Gallery</a>
-      <a href="privacy.html">Privacy</a>
-      <a href="mailto:nicedudin@gmail.com">Contact</a>
-    </nav>
+  <nav class="nav" aria-label="Primary">
+    <div class="nav-inner">
+      <a class="brand" href="index.html" id="brand-name">Shelfwire</a>
+      <div class="nav-links">
+        <a href="#gallery">Films</a>
+        <a href="privacy.html">Privacy</a>
+        <a class="nav-cta" href="mailto:nicedudin@gmail.com">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <video class="hero-video" id="hero-video" muted loop playsinline autoplay preload="metadata"></video>
+    <div class="hero-veil"></div>
+    <div class="hero-copy">
+      <p class="hero-kicker">Product film</p>
+      <h1 id="hero-title">Just the product.
+In motion.</h1>
+      <p class="hero-sub" id="hero-sub">Short films. Clean cuts. Direct links.</p>
+      <div class="hero-actions">
+        <a class="btn btn-fill" href="#gallery">Watch the films</a>
+        <a class="btn btn-ghost" href="https://www.pinterest.com/whtsib/" target="_blank" rel="noopener">Pinterest</a>
+      </div>
+    </div>
   </header>
 
-  <section class="hero">
-    <p class="eyebrow">Video catalog</p>
-    <h1 id="site-tagline">Product stories in motion</h1>
-    <p>
-      Folders of short product reels. Hover a collection — clips fan out.
-      Open any video for a quick look, a one-line product note, and a link.
-    </p>
+  <section class="strip" id="gallery">
+    <div class="strip-inner">
+      <div class="strip-label">Collections</div>
+      <div class="tabs" id="tabs" role="tablist"></div>
+    </div>
   </section>
 
-  <section class="rail-wrap" id="gallery">
-    <div class="rail-label">Collections</div>
-    <div class="rail" id="rail" role="tablist" aria-label="Product collections"></div>
-  </section>
-
-  <section class="stage" id="stage" aria-live="polite">
+  <section class="stage" id="stage">
     <div class="stage-head" id="stage-head"></div>
-    <div class="fan" id="fan"></div>
+    <div class="grid" id="grid"></div>
   </section>
 
-  <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-    <div class="modal-inner">
-      <button type="button" class="modal-close" id="modal-close" aria-label="Close">×</button>
-      <div class="modal-card">
-        <div class="modal-video">
-          <video id="modal-video" controls playsinline></video>
-        </div>
-        <div class="modal-side">
-          <div class="cat-tag" id="modal-cat"></div>
-          <h2 id="modal-title"></h2>
-          <p id="modal-blurb"></p>
-          <div class="btn-row">
-            <a class="btn primary" id="modal-link" href="#" target="_blank" rel="noopener">View product →</a>
-            <button type="button" class="btn ghost" id="modal-close-2">Close</button>
-          </div>
+  <div class="overlay" id="overlay" role="dialog" aria-modal="true" aria-labelledby="sheet-title">
+    <div class="sheet">
+      <button type="button" class="x" id="sheet-close" aria-label="Close">×</button>
+      <div class="sheet-media">
+        <video id="sheet-video" controls playsinline></video>
+      </div>
+      <div class="sheet-body">
+        <div class="eyebrow" id="sheet-cat"></div>
+        <h2 id="sheet-title"></h2>
+        <p id="sheet-blurb"></p>
+        <div class="sheet-actions">
+          <a class="btn btn-fill" id="sheet-link" href="#" target="_blank" rel="noopener">View product</a>
+          <button type="button" class="btn btn-ghost" id="sheet-close-2">Close</button>
         </div>
       </div>
     </div>
   </div>
 
   <footer class="foot">
-    <div><strong>Shelfwire</strong> · product media</div>
-    <div>
-      <a href="privacy.html">Privacy Policy</a>
-      ·
-      <a href="mailto:nicedudin@gmail.com">nicedudin@gmail.com</a>
+    <div class="foot-inner">
+      <div>Shelfwire · product media</div>
+      <div>
+        <a href="privacy.html">Privacy</a>
+        ·
+        <a href="mailto:nicedudin@gmail.com">nicedudin@gmail.com</a>
+      </div>
     </div>
   </footer>
 
   <script src="js/catalog.js"></script>
   <script src="js/gallery.js"></script>
-  <script>
-    document.getElementById("modal-close-2").addEventListener("click", () => {
-      document.getElementById("modal-close").click();
-    });
-  </script>
 </body>
 </html>

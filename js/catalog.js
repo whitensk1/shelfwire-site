@@ -1,48 +1,76 @@
 /**
- * Product video catalog — edit this file to add categories and clips.
- *
- * video: path under /media/ or full https URL
- * link: product page (WB, shop, etc.)
- * poster: optional thumbnail image
- *
- * Do not put personal / unrelated demo clips here — only product reels.
+ * Product film catalog — edit freely.
+ * video: relative path or https URL
  */
 window.SHELFWIRE_CATALOG = {
   siteName: "Shelfwire",
-  tagline: "Product stories in motion",
+  tagline: "Just the product.\nIn motion.",
+  sub: "Short films. Clean cuts. Direct links.",
   categories: [
     {
-      id: "herby",
-      title: "Herby",
-      emoji: "🌿",
-      blurb: "Short product reels for the Herby line",
-      accent: "#3ecf8e",
+      id: "polza",
+      title: "Польза",
+      label: "Collection",
+      blurb: "Utility. Clarity. Product value in a few seconds.",
+      accent: "#ffffff",
       items: [
-        // Add your Herby clips here, e.g.:
-        // {
-        //   id: "herby-1",
-        //   title: "Herby — highlight",
-        //   blurb: "One line about the product.",
-        //   link: "https://your-product-url",
-        //   video: "media/herby-1.mp4",
-        //   poster: "media/herby-1.jpg",
-        // },
+        {
+          id: "polza-1",
+          title: "Польза · 01",
+          blurb: "Product film",
+          link: "https://www.pinterest.com/whtsib/",
+          video: "media/polza/clip-01.mp4",
+          poster: "",
+        },
+        {
+          id: "polza-2",
+          title: "Польза · 02",
+          blurb: "Product film",
+          link: "https://www.pinterest.com/whtsib/",
+          video: "media/polza/clip-02.mp4",
+          poster: "",
+        },
+        {
+          id: "polza-3",
+          title: "Польза · 03",
+          blurb: "Product film",
+          link: "https://www.pinterest.com/whtsib/",
+          video: "media/polza/clip-03.mp4",
+          poster: "",
+        },
+        {
+          id: "polza-4",
+          title: "Польза · 04",
+          blurb: "Product film",
+          link: "https://www.pinterest.com/whtsib/",
+          video: "media/polza/clip-04.mp4",
+          poster: "media/polza/still.jpg",
+        },
       ],
     },
     {
-      id: "catalog-drop",
-      title: "Catalog drop",
-      emoji: "📦",
-      blurb: "Assortment shots for B2B buyers",
-      accent: "#6c8cff",
-      items: [],
+      id: "yumorist",
+      title: "Юморист",
+      label: "Collection",
+      blurb: "Lighter cuts. Same craft.",
+      accent: "#a3e635",
+      items: [
+        {
+          id: "yum-1",
+          title: "Юморист · 01",
+          blurb: "Product film",
+          link: "https://www.pinterest.com/whtsib/",
+          video: "media/yumorist/clip-01.mp4",
+          poster: "",
+        },
+      ],
     },
     {
-      id: "pins",
-      title: "Pinterest picks",
-      emoji: "📌",
-      blurb: "Clips mirrored from pin campaigns",
-      accent: "#e8c07d",
+      id: "herby",
+      title: "Herby",
+      label: "Coming soon",
+      blurb: "Drop product reels here when ready.",
+      accent: "#86efac",
       items: [],
     },
   ],
