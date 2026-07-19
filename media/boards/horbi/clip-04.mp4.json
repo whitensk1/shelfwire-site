@@ -1,0 +1,430 @@
+{
+    "node_id": "UGluOjEwNDU1Mzg4Njk3NzM2MDY5NTk=",
+    "category": "pinterest",
+    "has_required_attribution_provider": false,
+    "is_quick_promotable": false,
+    "utm_link": "https://www.wildberries.ru/catalog/1095345290/detail.aspx?size=1621577121&utm_source=Pinterest&utm_medium=organic",
+    "should_open_in_stream": true,
+    "link_domain": {
+        "id": "www.wildberries.ru"
+    },
+    "dominant_color": "#ceb496",
+    "is_repin": false,
+    "is_video": false,
+    "is_stale_product": false,
+    "video_status": null,
+    "tracking_params": "CwABAAAAEDczNjUyMDQzMDc4MDg1OTYGAAMAAQsABwAAAApuZ2FwaS9wcm9kCwANAAAAEDczNjUyMDQzMDc4MDg1OTYA",
+    "favorite_user_count": 0,
+    "has_been_boost_promoted": false,
+    "is_go_linkless": false,
+    "creator_analytics": null,
+    "is_eligible_for_related_products": false,
+    "promoted_lead_form": null,
+    "sponsorship": null,
+    "promoted_is_removable": false,
+    "is_downstream_promotion": false,
+    "promoted_is_lead_ad": false,
+    "image_signature": "e15bd797651a38f7b0f091e7a0743aae",
+    "story_pin_data_id": "3688929578503032384",
+    "aggregated_pin_data": {
+        "node_id": "QWdncmVnYXRlZFBpbkRhdGE6MzY4ODkzNzI3MjE2NTQ2Nzg0MA==",
+        "id": "3688937272165467840",
+        "did_it_data": {
+            "details_count": 0,
+            "responses_count": 0,
+            "type": "aggregateddiditdata",
+            "user_count": 0,
+            "rating": -1,
+            "images_count": 0,
+            "recommended_count": 0,
+            "tags": [],
+            "videos_count": 0,
+            "recommend_scores": [
+                {
+                    "score": 1,
+                    "count": 0
+                },
+                {
+                    "score": 0.5,
+                    "count": 0
+                },
+                {
+                    "score": 0,
+                    "count": 0
+                }
+            ]
+        },
+        "creator_analytics": null,
+        "aggregated_stats": {
+            "saves": 1,
+            "done": 0
+        },
+        "is_shop_the_look": false,
+        "has_xy_tags": false
+    },
+    "access": [],
+    "done_by_me": false,
+    "grid_title": "Жидкий хлорофилл HÖRBI — очищение и энергия",
+    "story_pin_data": {
+        "node_id": "U3RvcnlQaW5EYXRhOjM2ODg5Mjk1Nzg1MDMwMzIzODQ=",
+        "id": "3688929578503032384",
+        "has_product_pins": false,
+        "page_count": 1,
+        "pages": [
+            {
+                "blocks": [
+                    {
+                        "video": {
+                            "video_list": {
+                                "V_HLSV3_MOBILE": {
+                                    "width": 1238,
+                                    "height": 1674,
+                                    "duration": 15067,
+                                    "url": "https://v1.pinimg.com/videos/iht/hls/a0/27/34/a02734237533082de1d2cbf8c26f0603.m3u8",
+                                    "thumbnail": "https://i.pinimg.com/videos/thumbnails/originals/a0/27/34/a02734237533082de1d2cbf8c26f0603.0000000.jpg",
+                                    "captions_urls": {
+                                        "ru-ru": "https://v1.pinimg.com/videos/captions/ru-ru/a0/27/34/a02734237533082de1d2cbf8c26f0603.vtt"
+                                    },
+                                    "best_captions_url": null,
+                                    "block_id": "5507950528102998926",
+                                    "bitrates": null,
+                                    "media_id": "5507950528102998926",
+                                    "story_id": "3688929578503032384",
+                                    "page_id": null
+                                }
+                            },
+                            "id": "5507950528102998926",
+                            "bitrates": null
+                        },
+                        "block_type": 3
+                    },
+                    {
+                        "end_time": null,
+                        "type": "story_pin_static_sticker_block",
+                        "sticker_id": "5187729932333140867",
+                        "block_type": 14,
+                        "sticker_type": 1,
+                        "start_time": null
+                    }
+                ]
+            }
+        ],
+        "pages_preview": [
+            {
+                "blocks": [
+                    {
+                        "video": {
+                            "video_list": {
+                                "V_HLSV3_MOBILE": {
+                                    "width": 1238,
+                                    "height": 1674,
+                                    "duration": 15067,
+                                    "url": "https://v1.pinimg.com/videos/iht/hls/a0/27/34/a02734237533082de1d2cbf8c26f0603.m3u8",
+                                    "thumbnail": "https://i.pinimg.com/videos/thumbnails/originals/a0/27/34/a02734237533082de1d2cbf8c26f0603.0000000.jpg",
+                                    "captions_urls": {
+                                        "ru-ru": "https://v1.pinimg.com/videos/captions/ru-ru/a0/27/34/a02734237533082de1d2cbf8c26f0603.vtt"
+                                    },
+                                    "best_captions_url": null,
+                                    "block_id": "5507950528102998926",
+                                    "bitrates": null
+                                }
+                            },
+                            "id": "5507950528102998926",
+                            "bitrates": null
+                        },
+                        "block_type": 3
+                    },
+                    {
+                        "end_time": null,
+                        "type": "story_pin_static_sticker_block",
+                        "sticker_id": "5187729932333140867",
+                        "block_type": 14,
+                        "sticker_type": 1,
+                        "start_time": null
+                    }
+                ]
+            }
+        ],
+        "static_page_count": 0,
+        "last_edited": null,
+        "type": "storypindata",
+        "has_affiliate_products": false,
+        "metadata": {
+            "version": "0.16.0",
+            "template_type": null,
+            "root_pin_id": "1045538869773606959",
+            "compatible_version": "0.16.0",
+            "root_user_id": "1045539007150335653",
+            "is_compatible": false,
+            "recipe_data": null,
+            "basics": null,
+            "is_editable": false,
+            "pin_image_signature": "e15bd797651a38f7b0f091e7a0743aae",
+            "is_promotable": true,
+            "canvas_aspect_ratio": 0.7391304347826086,
+            "showreel_data": null,
+            "diy_data": null,
+            "pin_title": "Жидкий хлорофилл HÖRBI — очищение и энергия"
+        },
+        "is_deleted": false,
+        "total_video_duration": 15067
+    },
+    "carousel_data": null,
+    "embed": null,
+    "videos": null,
+    "repin_count": 0,
+    "is_native": true,
+    "native_creator": {
+        "node_id": "VXNlcjoxMDQ1NTM5MDA3MTUwMzM1NjUz",
+        "id": "1045539007150335653",
+        "is_verified_merchant": false,
+        "verified_identity": {},
+        "username": "worklab_sib",
+        "image_small_url": "https://i.pinimg.com/30x30_RS/c6/39/79/c639791b0f984c7f20ce1acd6dd35b33.jpg",
+        "image_medium_url": "https://i.pinimg.com/75x75_RS/c6/39/79/c639791b0f984c7f20ce1acd6dd35b33.jpg",
+        "is_primary_website_verified": true,
+        "full_name": "worklab.page"
+    },
+    "title": "Жидкий хлорофилл HÖRBI — очищение и энергия",
+    "description": "Жидкий хлорофилл HÖRBI на основе немецкой формулы эффективно очищает организм от токсинов, поддерживает иммунитет, улучшает кожу и дарит энергию. Натуральный состав, удобный формат. Попробуйте уже сегодня!\nСохраните, чтобы не потерять ✨\n#Хлорофилл #ЖидкийХлорофилл #Детокс #ЧистаяКожа #НатуральныеБАДы",
+    "seo_url": "/pin/1045538869773606959/",
+    "video_status_message": null,
+    "is_promoted": false,
+    "type": "pin",
+    "is_eligible_for_pdp": false,
+    "is_eligible_for_pre_loved_goods_label": false,
+    "call_to_action_text": null,
+    "reaction_counts": {
+        "1": 3
+    },
+    "shopping_flags": [],
+    "grid_attribution": null,
+    "insertion_id": null,
+    "product_pin_data": null,
+    "digital_media_source_type": null,
+    "collection_pin": null,
+    "pinner": {
+        "node_id": "VXNlcjoxMDQ1NTM5MDA3MTUwMzM1NjUz",
+        "id": "1045539007150335653",
+        "is_verified_merchant": false,
+        "verified_identity": {},
+        "username": "worklab_sib",
+        "image_small_url": "https://i.pinimg.com/30x30_RS/c6/39/79/c639791b0f984c7f20ce1acd6dd35b33.jpg",
+        "image_medium_url": "https://i.pinimg.com/75x75_RS/c6/39/79/c639791b0f984c7f20ce1acd6dd35b33.jpg",
+        "is_primary_website_verified": true,
+        "full_name": "worklab.page"
+    },
+    "id": "1045538869773606959",
+    "link_utm_applicable_and_replaced": 1,
+    "board": {
+        "node_id": "Qm9hcmQ6MTA0NTUzODkzODQzMjYzODg5Mg==",
+        "is_collaborative": false,
+        "board_order_modified_at": "Sun, 19 Jul 2026 10:02:25 +0000",
+        "seo_related_interests": [],
+        "should_show_more_ideas": false,
+        "event_date": null,
+        "allow_homefeed_recommendations": true,
+        "id": "1045538938432638892",
+        "viewer_collaborator_join_requested": false,
+        "privacy": "public",
+        "sectionless_pin_count": 10,
+        "archived_by_me_at": null,
+        "collaborator_count": 0,
+        "seo_description": "Explore a hand-picked collection of Pins about Horbi on Pinterest.",
+        "category": null,
+        "header": null,
+        "map_id": "pinterest.ijz1714i",
+        "images": {
+            "474x": [
+                {
+                    "url": "https://i.pinimg.com/474x/90/00/1e/90001e17ed2030402b365bea1f9bf2ab.jpg",
+                    "width": 474,
+                    "height": 641,
+                    "dominant_color": "#98896C"
+                },
+                {
+                    "url": "https://i.pinimg.com/474x/61/fe/22/61fe2273f24a450a268379422392198f.jpg",
+                    "width": 474,
+                    "height": 641,
+                    "dominant_color": "#D2B698"
+                },
+                {
+                    "url": "https://i.pinimg.com/474x/07/95/15/079515ac19322a447946281640b082d9.jpg",
+                    "width": 474,
+                    "height": 641,
+                    "dominant_color": "#CBB796"
+                },
+                {
+                    "url": "https://i.pinimg.com/474x/ba/86/d7/ba86d7b2044555589d0940b0420505cd.jpg",
+                    "width": 474,
+                    "height": 641,
+                    "dominant_color": "#CEB496"
+                },
+                {
+                    "url": "https://i.pinimg.com/474x/81/a6/c9/81a6c95e4508736065be9cacb2a48abe.jpg",
+                    "width": 474,
+                    "height": 641,
+                    "dominant_color": "#D2B594"
+                },
+                {
+                    "url": "https://i.pinimg.com/474x/1f/02/d8/1f02d8ee5c44eb5eb1e3f72c2c311eb1.jpg",
+                    "width": 474,
+                    "height": 842,
+                    "dominant_color": "#E7F8E3"
+                },
+                {
+                    "url": "https://i.pinimg.com/474x/e1/5b/d7/e15bd797651a38f7b0f091e7a0743aae.jpg",
+                    "width": 474,
+                    "height": 641,
+                    "dominant_color": "#CEB496"
+                },
+                {
+                    "url": "https://i.pinimg.com/474x/5f/fc/ff/5ffcff186ee0e5dd3386c432f557a43e.jpg",
+                    "width": 474,
+                    "height": 842,
+                    "dominant_color": "#CDCDC9"
+                },
+                {
+                    "url": "https://i.pinimg.com/474x/a2/25/52/a2255277d9d3622ab0937df59e3ce960.jpg",
+                    "width": 474,
+                    "height": 641,
+                    "dominant_color": "#D7C1A3"
+                },
+                {
+                    "url": "https://i.pinimg.com/474x/20/2f/e1/202fe1cbda6d6cca0dcbe05dfe226b33.jpg",
+                    "width": 474,
+                    "height": 641,
+                    "dominant_color": "#D7C1A3"
+                }
+            ]
+        },
+        "viewer_contact_request": null,
+        "layout": "default",
+        "name": "Horbi",
+        "pin_count": 10,
+        "featured_in": [],
+        "seo_title": "Horbi on Pinterest",
+        "should_show_board_collaborators": true,
+        "section_count": 0,
+        "cover_pin": {
+            "pin_id": "1045538869773602616",
+            "image_signature": "202fe1cbda6d6cca0dcbe05dfe226b33",
+            "timestamp": 1784354953
+        },
+        "access": [],
+        "follower_count": 0,
+        "image_cover_url": "https://i.pinimg.com/200x150/20/2f/e1/202fe1cbda6d6cca0dcbe05dfe226b33.jpg",
+        "should_show_shop_feed": false,
+        "followed_by_me": false,
+        "seo_noindex_reason": null,
+        "blocking_actions": [],
+        "collaborator_requests_enabled": false,
+        "featured_board_metadata": null,
+        "type": "board",
+        "collaborated_by_me": false,
+        "url": "/worklab_sib/horbi/",
+        "seo_canonical_domain": "www.pinterest.com",
+        "description": "",
+        "event_start_date": null,
+        "is_ads_only": false,
+        "owner": {
+            "node_id": "VXNlcjoxMDQ1NTM5MDA3MTUwMzM1NjUz",
+            "domain_url": "worklab.page",
+            "id": "1045539007150335653",
+            "image_small_url": "https://i.pinimg.com/30x30_RS/c6/39/79/c639791b0f984c7f20ce1acd6dd35b33.jpg",
+            "blocked_by_me": false,
+            "ads_only_profile_site": null,
+            "first_name": "worklab.page",
+            "is_ads_only_profile": false,
+            "username": "worklab_sib",
+            "verified_identity": {},
+            "image_xlarge_url": "https://i.pinimg.com/280x280_RS/c6/39/79/c639791b0f984c7f20ce1acd6dd35b33.jpg",
+            "indexed": true,
+            "is_private_profile": false,
+            "image_medium_url": "https://i.pinimg.com/75x75_RS/c6/39/79/c639791b0f984c7f20ce1acd6dd35b33.jpg",
+            "full_name": "worklab.page",
+            "is_tastemaker": false,
+            "is_verified_merchant": false,
+            "type": "user",
+            "is_partner": true,
+            "last_name": ""
+        },
+        "seo_related_seasonal_interests": null,
+        "sensitivity_screen": {
+            "reason": null,
+            "show_warning": false
+        },
+        "collab_board_email": false
+    },
+    "link": "https://www.wildberries.ru/catalog/1095345290/detail.aspx?size=1621577121",
+    "unauth_on_page_description": "Жидкий хлорофилл HÖRBI на основе немецкой формулы эффективно очищает организм от токсинов, поддерживает иммунитет, улучшает кожу и дарит энергию. Натуральный состав, удобный формат. Попробуйте уже сегодня!\nСохраните, чтобы не потерять ✨\n#Хлорофилл #ЖидкийХлорофилл #Детокс #ЧистаяКожа #НатуральныеБАДы",
+    "seo_alt_text": "Жидкий хлорофилл HÖRBI на основе немецкой формулы эффективно очищает организм от токсинов, поддерживает иммунитет, улучшает кожу и дарит энергию. Натуральный состав, удобный формат. Попробуйте уже сегодня!\nСохраните, чтобы не потерять ✨\n#Хлорофилл #ЖидкийХлорофилл #Детокс #ЧистаяКожа #НатуральныеБАДы ",
+    "image_crop": {
+        "min_y": 0,
+        "max_y": 1
+    },
+    "campaign_id": null,
+    "rich_summary": null,
+    "product_metadata": null,
+    "favorited_by_me": false,
+    "domain": "wildberries.ru",
+    "attribution": null,
+    "images": {
+        "170x": {
+            "width": 236,
+            "height": 319,
+            "url": "https://i.pinimg.com/236x/e1/5b/d7/e15bd797651a38f7b0f091e7a0743aae.jpg"
+        },
+        "136x136": {
+            "width": 136,
+            "height": 136,
+            "url": "https://i.pinimg.com/136x136/e1/5b/d7/e15bd797651a38f7b0f091e7a0743aae.jpg"
+        },
+        "236x": {
+            "width": 236,
+            "height": 319,
+            "url": "https://i.pinimg.com/236x/e1/5b/d7/e15bd797651a38f7b0f091e7a0743aae.jpg"
+        },
+        "474x": {
+            "width": 474,
+            "height": 641,
+            "url": "https://i.pinimg.com/474x/e1/5b/d7/e15bd797651a38f7b0f091e7a0743aae.jpg"
+        },
+        "736x": {
+            "width": 736,
+            "height": 995,
+            "url": "https://i.pinimg.com/736x/e1/5b/d7/e15bd797651a38f7b0f091e7a0743aae.jpg"
+        },
+        "orig": {
+            "width": 1238,
+            "height": 1675,
+            "url": "https://i.pinimg.com/originals/e1/5b/d7/e15bd797651a38f7b0f091e7a0743aae.jpg"
+        }
+    },
+    "is_oos_product": false,
+    "alt_text": null,
+    "promoter": null,
+    "unified_user_note": "Жидкий хлорофилл HÖRBI на основе немецкой формулы эффективно очищает организм от токсинов, поддерживает иммунитет, улучшает кожу и дарит энергию. Натуральный состав, удобный формат. Попробуйте уже сегодня!\nСохраните, чтобы не потерять ✨\n#Хлорофилл #ЖидкийХлорофилл #Детокс #ЧистаяКожа #НатуральныеБАДы",
+    "auto_alt_text": null,
+    "debug_info_html": null,
+    "is_quick_promotable_by_pinner": false,
+    "count": 1,
+    "subcategory": "board",
+    "num": 1,
+    "filename": "a02734237533082de1d2cbf8c26f0603",
+    "extension": "mp4",
+    "width": 1238,
+    "height": 1674,
+    "duration": 15067,
+    "url": "https://v1.pinimg.com/videos/iht/hls/a0/27/34/a02734237533082de1d2cbf8c26f0603.m3u8",
+    "thumbnail": "https://i.pinimg.com/videos/thumbnails/originals/a0/27/34/a02734237533082de1d2cbf8c26f0603.0000000.jpg",
+    "captions_urls": {
+        "ru-ru": "https://v1.pinimg.com/videos/captions/ru-ru/a0/27/34/a02734237533082de1d2cbf8c26f0603.vtt"
+    },
+    "best_captions_url": null,
+    "block_id": "5507950528102998926",
+    "bitrates": null,
+    "media_id": "5507950528102998926",
+    "story_id": "3688929578503032384",
+    "page_id": null
+}

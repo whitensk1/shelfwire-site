@@ -149,12 +149,31 @@
     sheetCat.textContent = cat.title;
     sheetTitle.textContent = item.title;
     sheetBlurb.textContent = item.blurb || "";
-    if (item.link) {
-      sheetLink.href = item.link;
-      sheetLink.hidden = false;
-    } else {
-      sheetLink.hidden = true;
+
+    const productLink = $("sheet-link");
+    const pinLink = $("sheet-pin");
+    // Product / Wildberries (destination from Pinterest)
+    if (productLink) {
+      if (item.link) {
+        productLink.href = item.link;
+        productLink.hidden = false;
+        productLink.textContent = /wildberries|wb\.ru/i.test(item.link)
+          ? "Wildberries →"
+          : "Product link →";
+      } else {
+        productLink.hidden = true;
+      }
     }
+    // Pin page
+    if (pinLink) {
+      if (item.pinterest_url) {
+        pinLink.href = item.pinterest_url;
+        pinLink.hidden = false;
+      } else {
+        pinLink.hidden = true;
+      }
+    }
+
     sheetVideo.pause();
     sheetVideo.removeAttribute("src");
     const poster = item.poster || item.image || "";
@@ -164,7 +183,6 @@
       sheetVideo.load();
       sheetVideo.play().catch(() => {});
     } else if (poster) {
-      // show image-only: use poster as video poster without src
       sheetVideo.removeAttribute("src");
       sheetVideo.load();
     }
