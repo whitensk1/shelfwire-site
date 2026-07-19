@@ -1,8 +1,11 @@
 (() => {
   "use strict";
 
-  const data = window.SHELFWIRE_CATALOG;
-  if (!data) return;
+  const data = window.WORKLAB_CATALOG;
+  if (!data) {
+    console.error("WORKLAB_CATALOG missing — run scripts/sync_pinterest.py");
+    return;
+  }
 
   const $ = (id) => document.getElementById(id);
   const tabs = $("tabs");
@@ -16,6 +19,7 @@
   const sheetBlurb = $("sheet-blurb");
   const sheetLink = $("sheet-link");
   const heroVideo = $("hero-video");
+  const syncMeta = $("sync-meta");
 
   let activeId = null;
   let leaveTimer = null;
@@ -37,14 +41,19 @@
   }
 
   function renderTabs() {
-    tabs.innerHTML = (data.categories || [])
+    const cats = data.categories || [];
+    if (!cats.length) {
+      tabs.innerHTML = `<div class="empty" style="grid-column:auto;padding:20px;min-width:240px">No boards yet. Ask to sync Pinterest.</div>`;
+      return;
+    }
+    tabs.innerHTML = cats
       .map((c) => {
         const n = (c.items || []).length;
         return `
         <button type="button" class="tab" data-id="${esc(c.id)}" role="tab">
-          <div class="t-label">${esc(c.label || "Collection")}</div>
+          <div class="t-label">${esc(c.label || "Board")}</div>
           <div class="t-title">${esc(c.title)}</div>
-          <div class="t-count">${n ? n + " films" : "Soon"}</div>
+          <div class="t-count">${n ? n + " works" : "Empty"}</div>
         </button>`;
       })
       .join("");
@@ -61,7 +70,7 @@
       if (scroll) $("gallery")?.scrollIntoView({ behavior: "smooth", block: "start" });
       return;
     }
-    const cat = data.categories.find((c) => c.id === id);
+    const cat = (data.categories || []).find((c) => c.id === id);
     if (!cat) return;
 
     const go = () => {
@@ -93,29 +102,32 @@
 
     const items = cat.items || [];
     if (!items.length) {
-      grid.innerHTML = `<div class="empty">Nothing here yet — drop product films into this collection.</div>`;
+      grid.innerHTML = `<div class="empty">Nothing in this board yet.</div>`;
       return;
     }
 
     grid.innerHTML = items
-      .map(
-        (item, i) => `
+      .map((item, i) => {
+        const hasVideo = Boolean(item.video);
+        const poster = item.poster || item.image || "";
+        const media = hasVideo
+          ? `<video src="${esc(item.video)}" ${poster ? `poster="${esc(poster)}"` : ""} muted loop playsinline preload="metadata"></video>`
+          : poster
+            ? `<img class="ph" src="${esc(poster)}" alt="" />`
+            : `<div class="ph"></div>`;
+        return `
       <article class="card" style="--i:${i}" data-id="${esc(item.id)}" data-cat="${esc(cat.id)}">
-        ${
-          item.video
-            ? `<video src="${esc(item.video)}" ${item.poster ? `poster="${esc(item.poster)}"` : ""} muted loop playsinline preload="metadata"></video>`
-            : `<div class="ph"></div>`
-        }
+        ${media}
         <div class="grad"></div>
         <div class="dot" aria-hidden="true">
           <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
         </div>
         <div class="info">
           <h3>${esc(item.title)}</h3>
-          <span>${esc(item.blurb || "Product film")}</span>
+          <span>${esc(item.blurb || "Work")}</span>
         </div>
-      </article>`
-      )
+      </article>`;
+      })
       .join("");
 
     grid.querySelectorAll(".card").forEach((card) => {
@@ -145,11 +157,16 @@
     }
     sheetVideo.pause();
     sheetVideo.removeAttribute("src");
-    if (item.poster) sheetVideo.poster = item.poster;
+    const poster = item.poster || item.image || "";
+    if (poster) sheetVideo.poster = poster;
     if (item.video) {
       sheetVideo.src = item.video;
       sheetVideo.load();
       sheetVideo.play().catch(() => {});
+    } else if (poster) {
+      // show image-only: use poster as video poster without src
+      sheetVideo.removeAttribute("src");
+      sheetVideo.load();
     }
     overlay.classList.add("open");
     document.body.style.overflow = "hidden";
@@ -171,15 +188,18 @@
     if (e.key === "Escape") closeSheet();
   });
 
-  // brand text
   const brand = $("brand-name");
   const h1 = $("hero-title");
   const sub = $("hero-sub");
-  if (brand) brand.textContent = data.siteName || "Mediadrop";
+  if (brand) brand.textContent = data.siteName || "Worklab";
   if (h1) h1.textContent = data.tagline || "";
   if (sub) sub.textContent = data.sub || "";
+  if (syncMeta) {
+    const when = data.syncedAt ? `Synced ${data.syncedAt}` : "";
+    const src = data.pinterestProfile || "";
+    syncMeta.textContent = [when, src].filter(Boolean).join(" · ");
+  }
 
-  // hero video
   const hv = firstVideo();
   if (heroVideo && hv) {
     heroVideo.src = hv;
