@@ -89,7 +89,7 @@
 
     const items = cat.items || [];
     if (!items.length) {
-      fan.innerHTML = `<div class="stage-empty">No clips in this folder yet.</div>`;
+      fan.innerHTML = `<div class="stage-empty">No product clips in this collection yet.<br><span style="font-size:0.85em;opacity:0.8">Add videos in <code>js/catalog.js</code> and files under <code>media/</code>.</span></div>`;
       return;
     }
 
