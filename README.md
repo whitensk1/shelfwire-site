@@ -1,10 +1,35 @@
 # Shelfwire — public site (GitHub Pages)
 
-English mini-site for:
+Multimedia product video catalog + privacy page.
+
+## Gallery
+
+- **Collections** (folders) on top — hover or click to fan out clips  
+- Hover a clip — preview plays  
+- Click — full player, short blurb, product link  
+- Data: edit `js/catalog.js` (categories, videos, links)
+
+```js
+{
+  id: "herby",
+  title: "Herby",
+  items: [{
+    title: "Herby — highlight",
+    blurb: "One line about the product",
+    link: "https://shop.example/item",
+    video: "media/herby-1.mp4",  // or https://...
+    poster: "media/herby-1.jpg"  // optional
+  }]
+}
+```
+
+Put video files in `public-site/media/` (or use CDN URLs).
+
+English mini-site also covers:
 
 - Pinterest / developer app **Website URL**
 - **Privacy Policy URL**
-- Honest positioning: independent advertising / product-content specialist (not the manufacturer)
+- Independent product-content positioning
 
 ## URLs after publish
 
