@@ -151,6 +151,7 @@
     sheetBlurb.textContent = item.blurb || "";
 
     const productLink = $("sheet-link");
+    const siteLink = $("sheet-site");
     const pinLink = $("sheet-pin");
     // Product / Wildberries (destination from Pinterest)
     if (productLink) {
@@ -162,6 +163,21 @@
           : "Product link →";
       } else {
         productLink.hidden = true;
+      }
+    }
+    // Official brand site — for HÖRBI board (every video / card)
+    if (siteLink) {
+      const isHorbi =
+        cat.id === "horbi" ||
+        /horbi|hörbi|h\u00f6rbi/i.test(cat.title || "") ||
+        /horbi|hörbi/i.test(item.title || "") ||
+        Boolean(item.site);
+      if (isHorbi || item.site) {
+        siteLink.href = item.site || "https://horbi.org/";
+        siteLink.hidden = false;
+        siteLink.textContent = "Official site →";
+      } else {
+        siteLink.hidden = true;
       }
     }
     // Pin page
